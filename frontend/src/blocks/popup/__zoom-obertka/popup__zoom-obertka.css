@@ -1,0 +1,5 @@
+.popup__zoom-obertka{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

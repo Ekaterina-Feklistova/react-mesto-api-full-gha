@@ -1,0 +1,23 @@
+.profile__button-info {
+    background-image: url(../../../images/button-karandash.svg);
+    background-repeat: no-repeat;
+    background-color:transparent;
+    background-origin: content-box;
+    border: 1px solid #FFFFFF;
+    display: flex;
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+    padding: 6px;
+    cursor: pointer;
+}
+.profile__button-info:hover {
+    opacity: 0.6;
+}
+@media screen and (max-width: 767px) {
+    .profile__button-info {
+        width: 18px;
+        height: 18px;
+        padding: 4.25px;
+    }
+}

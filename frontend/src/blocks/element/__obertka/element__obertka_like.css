@@ -1,0 +1,5 @@
+.element__obertka_like{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

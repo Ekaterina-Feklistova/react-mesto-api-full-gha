@@ -1,0 +1,24 @@
+.footer {
+    max-width: 100%;
+    margin-top: 66px;
+    margin-bottom: 60px;
+    /* липкий футер */
+    flex-shrink: 0;
+}
+@media screen and (max-width: 879px) {
+    .footer {
+        min-width: 714px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media screen and (max-width: 767px) {
+    .footer {
+        padding: 0;
+        min-width: 282px;
+        margin-top: 48px;
+        margin-bottom: 36px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
