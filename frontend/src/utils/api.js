@@ -97,7 +97,7 @@ class Api {
     }
 }
 const api = new Api({
-    baseUrl: 'https://localhosts:3000',
+    baseUrl: 'https://api.feklistova.nomoredomainsmonster.ru',
 })
 
 export default api

@@ -1,4 +1,4 @@
-const BASE_URL = 'https://auth.nomoreparties.co'
+const BASE_URL = 'https://api.feklistova.nomoredomainsmonster.ru'
 
 function getResponseData(res){
   return res.ok ? res.json() : Promise.reject(`${res.status} ${res.statusText}`)
