@@ -1,4 +1,4 @@
-const { SECRET_KEY } = process.env;
+const { SECRET_KEY = 'mesto' } = process.env;
 
 const { HTTP_STATUS_OK, HTTP_STATUS_CREATED } = require('http2').constants;
 const mongoose = require('mongoose');
