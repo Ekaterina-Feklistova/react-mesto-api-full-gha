@@ -1,10 +1,9 @@
-const BASE_URL = 'https://api.feklistova.nomoredomainsmonster.ru'
-
+const BASE_URL = 'https://api.feklistova.nomoredomainsmonster.ru';
 function getResponseData(res){
   return res.ok ? res.json() : Promise.reject(`${res.status} ${res.statusText}`)
 }
 
-export function registration(data){
+export function registration(data){ 
   return fetch(`${BASE_URL}/signup`, {
     method: 'POST',
     headers: {

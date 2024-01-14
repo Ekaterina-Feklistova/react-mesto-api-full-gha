@@ -6,33 +6,30 @@ class Api {
     _checkResponse(res){
         return res.ok ? res.json() : Promise.reject
     }
-
-    _request(url, options) {
-        return fetch(`${this._url}${url}`, options)
-          .then(this._checkResponse)
-    }
      
     getUserInfo(token) {
-        return this._request('/users/me', {
+        return fetch(`${this._url}/users/me`, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }
         })
+        .then(this._checkResponse)
     }
 
     getCards(token) {
-        return this._checkResponse('/cards', {
+        return fetch(`${this._url}/cards`, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }
         })
+        .then(this._checkResponse)
     }
 
     setUserInfo(data, token) {
-        return this._checkResponse('/users/me', {
+        return fetch(`${this._url}/users/me`, {
             method: 'PATCH',
             headers: {
-                'Content-type': 'application/json',
+                'Content-Type': 'application/json',
                 "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify({
@@ -40,26 +37,28 @@ class Api {
                 about: data.subname
             })
         })
+        .then(this._checkResponse)
     }
 
     setNewAvatar(data, token) {
-        return this._checkResponse('/users/me/avatar', {
+        return fetch(`${this._url}/users/me/avatar`, {
             method: 'PATCH',
             headers: {
-                'Content-type': 'application/json',
+                'Content-Type': 'application/json',
                 "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify({
                 avatar: data.avatar,
             })
         })
+        .then(this._checkResponse)
     }
 
     addCard(data, token) {
-        return this._checkResponse('/cards', {
+        return fetch(`${this._url}/cards`, {
             method: 'POST',
             headers: {
-                'Content-type': 'application/json',
+                'Content-Type': 'application/json',
                 "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify({
@@ -67,37 +66,42 @@ class Api {
                 link: data.link
             })
         })
+        .then(this._checkResponse)
     }
 
     addLike(cardId, token){
-        return this._checkResponse(`/cards/${cardId}/likes`, {
+        return fetch(`${this._url}/cards/${cardId}/likes`, {
             method: 'PUT',
             headers: {
                 "Authorization": `Bearer ${token}`
-            }
+            },
         })
+        .then(this._checkResponse)
     }
 
     deleteLike(cardId, token){
-        return this._checkResponse(`/cards/${cardId}/likes`, {
+        return fetch(`${this._url}/cards/${cardId}/likes`, {
             method: 'DELETE',
             headers: {
                 "Authorization": `Bearer ${token}`
-            }
+            },
         })
+        .then(this._checkResponse)
     }
 
     deleteCard(cardId, token){
-        return this._checkResponse(`/cards/${cardId}`, {
+        return fetch(`${this._url}/cards/${cardId}`, {
             method: 'DELETE',
             headers: {
                 "Authorization": `Bearer ${token}`
-            }
+            },
         })
+        .then(this._checkResponse)
     }
 }
 const api = new Api({
     baseUrl: 'https://api.feklistova.nomoredomainsmonster.ru',
+    
 })
 
 export default api
