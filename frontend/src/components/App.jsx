@@ -103,7 +103,7 @@ function App() {
         if(res && res.data){
           setIsSuccessful(true)
           setIsResultPopupOpen(true)
-          navigate("/sign-in")
+          navigate('/sign-in')
         }
       })
       .catch((err) => {

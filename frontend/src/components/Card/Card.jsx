@@ -3,6 +3,7 @@ import { useContext } from "react"
 import CurrentUserContext from "../../CurrentUserContext/CurrentUserContext.js"
 
 export default function Card({ card, onCardClick, onDelete }){
+  console.log(card);
   const currentUser = useContext(CurrentUserContext)
   return(
     <article className="element">
