@@ -11,14 +11,14 @@ export default function ButtonLike({ likes = [], myId, cardId }){
 
     function handleLike(){
         if(isLike){
-            api.deleteLike(cardId)
+            api.deleteLike(cardId, localStorage.jwt)
               .then(res => {
                 setIsLike(false)
                 setCount(res.likes.length)
               })
               .catch((err) => console.log(`Ошибка при снятии лайка ${err}`))
         } else {
-            api.addLike(cardId)
+            api.addLike(cardId, localStorage.jwt)
               .then(res => {
                 setIsLike(true)
                 setCount(res.likes.length)
