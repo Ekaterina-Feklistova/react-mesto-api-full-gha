@@ -86,33 +86,14 @@ function App() {
     setIsDeletePopupOpen(true)
   }
 
-  //useEffect(() => {
-    //if(loggedIn){
-      //Promise.all([api.getUserInfo(localStorage.jwt), api.getCards(localStorage.jwt)])
-        //.then(([dataUser, dataCard]) => {
-          //setCurrentUser(dataUser)
-          //setCards(dataCard.reverse())
-      //})
-        //.catch((err) => console.log(`Ошибка при создании начальных данных ${err}`))
-    //}
-  //},[loggedIn])
   useEffect(() => {
-    if (loggedIn){
-      api.getUserInfo(localStorage.jwt)
-        .then((dataUser) => {
+    if(loggedIn){
+      Promise.all([api.getUserInfo(localStorage.jwt), api.getCards(localStorage.jwt)])
+        .then(([dataUser, dataCard]) => {
           setCurrentUser(dataUser)
-        })
-        .catch((err) => console.log(`Ошибка данных пользователя ${err}`))
-    }
-  },[loggedIn])
-
-  useEffect(() => {
-    if (loggedIn){
-      api.getCards(localStorage.jwt)
-        .then((dataCard) => {
           setCards(dataCard.reverse())
-        })
-        .catch((err) => console.log(`Ошибка данных карточки ${err}`))
+      })
+        .catch((err) => console.log(`Ошибка при создании начальных данных ${err}`))
     }
   },[loggedIn])
   
