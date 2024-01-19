@@ -19,6 +19,7 @@ class Api {
     getCards(token) {
         return fetch(`${this._url}/cards`, {
             headers: {
+                'Content-Type': 'application/json',
                 "Authorization": `Bearer ${token}`
             }
         })
