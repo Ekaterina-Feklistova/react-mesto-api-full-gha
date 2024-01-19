@@ -6,6 +6,8 @@
     background-color: transparent;
     padding: 0;
     border: none;
+    object-fit: cover;
+    cursor: pointer;
 }
 .profile__button-avatar::before{
     content: '';
