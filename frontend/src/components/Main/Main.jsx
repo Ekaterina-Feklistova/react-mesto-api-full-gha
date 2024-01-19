@@ -3,6 +3,8 @@ import Card from "../Card/Card.jsx";
 import CurrentUserContext from "../../CurrentUserContext/CurrentUserContext.js";
 import Register from "../Register/Register.jsx";
 import Login from "../Login/Login.jsx";
+import '../../blocks/profile/profile.css';
+//import '../../blocks/profile/__button/profile__button.css';
 
 export default function Main({ name, onEditProfile, onAddPlace, onEditAvatar, onCardClick, onDelete, cards, handleLogin, handleRegister }){
   const currentUser = useContext(CurrentUserContext)
