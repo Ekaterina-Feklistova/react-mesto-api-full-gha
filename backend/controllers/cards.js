@@ -32,7 +32,6 @@ module.exports.addCard = (req, res, next) => {
 
 module.exports.getCard = (req, res, next) => {
   Card.find({})
-    .populate(['owner', 'likes'])
     .then((cards) => res.status(HTTP_STATUS_OK).send(cards))
     .catch(next);
 };
