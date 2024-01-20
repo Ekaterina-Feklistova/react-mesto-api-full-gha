@@ -99,12 +99,11 @@ function App() {
   
   function handleRegister(data){
     registration(data)
-      .then(res => {
-        if(res && res.data){
-          setIsSuccessful(true)
-          setIsResultPopupOpen(true)
-          navigate('/sign-in')
-        }
+      .then(() => {
+        setIsSuccessful(true)
+        setIsResultPopupOpen(true)
+        navigate('/sign-in')
+        
       })
       .catch((err) => {
         setIsSuccessful(false)
